@@ -35,3 +35,5 @@ To manually executing queries in response to events other than component renderi
 - In utils folder I stored javascript pure function to help converting strings to title-case to help dealing with some inconsistent data.
 
 - App extra Dependencies: @apollo/client / GraphQl / react-router-dom
+
+Deployed App: https://romantic-williams-8e2e9a.netlify.app/

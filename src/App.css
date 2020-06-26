@@ -1,38 +1,256 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  width: 80vw;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fcfcfc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page-container {
+  position: relative;
   min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.logo {
+  width: 20rem;
+  padding: 2rem 0;
+  margin: 2rem 0 2rem -3rem;
+}
+
+.search-result {
+  margin: 1rem 0;
+  color: black;
+}
+
+.search-result:hover {
+  color: #ffc400;
+}
+
+/* ==================== 
+Search input - Home
+=======================*/
+
+.search_box {
+  width: 100%;
+  position: relative;
+}
+
+.search_box input[type='text'] {
+  width: 100%;
+  padding: 0.5rem;
+  padding-right: 60px;
+  box-sizing: border-box;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.1rem;
+  font-size: 18px;
+  color: #3f3f3f;
+  outline: none;
+}
+
+.fa-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 25px;
+  color: #858585;
+  font-size: 25px;
+}
+
+/* ==================== 
+Character Card - Home
+=======================*/
+.char-list-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2vw;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+}
+
+.character-card-container-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.1rem;
+  box-shadow: 0 5px 4px -4px #0000007a;
+  background-color: white;
+  grid-gap: 2vw;
+  padding: 1rem;
+}
+
+.char-image-home img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.char-info-home li {
+  list-style-type: none;
+}
+
+.char-movies-list-home,
+.char-info-home li {
+  line-height: 1.5em;
+}
+
+.film-links {
+  color: #838383;
+}
+
+.film-links:hover {
+  color: #ffc400;
+}
+
+/* ==================== 
+Film Card - Film page
+=======================*/
+
+.button-back {
+  margin-left: 1rem;
+}
+.button-back i {
+  color: #ffc400;
+}
+
+.button-back:hover {
+  cursor: pointer;
+  color: #f0b000;
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto;
+  grid-gap: 2vw;
+  margin: 1.5rem;
+}
+
+.container-card img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+
+.card-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.card-info {
+  line-height: 1.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-info-last-p {
+  align-items: end;
+  line-height: 1.8;
+}
+
+/* ==================== 
+Character Card - Character page
+=======================*/
+
+.char-card-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.char-card-list-movies {
+  margin-left: 4rem;
+}
+
+.char-card-list-info li,
+.char-card-list-movies li {
+  list-style: none;
+  line-height: 1.8;
+}
+
+.char-card-wrapper h2,
+.char-card-list-movies h2 {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container-card {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    width: 90%;
+  }
+
+  .logo {
+    margin: 4rem auto;
+    width: 100%;
+  }
+
+  .search_box {
+    width: 100%;
+  }
+
+  .char-list-home {
+    grid-template-columns: 1fr;
+  }
+
+  .character-card-container-home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2vw;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .button-back {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .container-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 5rem;
+  }
+
+  .card-wrapper,
+  .card-info,
+  .card-info-last-p {
+    margin-top: 1rem;
+  }
+
+  .char-card-wrapper {
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .char-card-list-movies {
+    margin-left: 0rem;
+    margin: 2rem 0;
   }
 }

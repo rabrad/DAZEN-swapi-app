@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this app I used Start wars graphQL Api with React js and for local state management i used [Apollo-client v3.0 beta](https://www.apollographql.com/docs/react/v3.0-beta/migrating/apollo-client-3-migration/) which allowed me to write a query and receive data without manually tracking loading states as with React useSate Hook.
 
-## Available Scripts
+#### `Apollo client hooks` that has been used in the app:
 
-In the project directory, you can run:
+To automatically executes the specified query, I used `useQuery` hook from apollo-client which it will trigger When React mounts and renders a component.
 
-### `npm start`
+To manually executing queries in response to events other than component rendering, I used `useLazyQuery` which returns a function that can be called manually.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### `The App Map`:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> index.js
 
-### `npm test`
+> > App.ja
+>
+> > Pages folder: Home.js / Film.js / Character.j
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> > assets: All images
 
-### `npm run build`
+> > Utils: Helper js to covert fetched strings to Title Case
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> > Components folder:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> > > character folder: CharacterCard.js / CharacterItem.js / FilmItem.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> > > Film folder: FilmDetail.js
 
-### `npm run eject`
+> > > home folder: CharacterCardHome.js / CharacterList.js / Search.js / SearchedCharacter.js
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### `What's in` :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- I have tried to separate folders in a way that makes it easy to understand the connection between each page in Pages Folder and the related sub-folder in Components folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- In assets folder, I stored the photos and some `screenshots` of the app to help in visualize it.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- In utils folder I stored javascript pure function to help converting strings to title-case to help dealing with some inconsistent data.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- App extra Dependencies: @apollo/client / GraphQl / react-router-dom

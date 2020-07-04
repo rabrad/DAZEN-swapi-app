@@ -23,7 +23,7 @@ function App() {
             <Route path='/character/:id' component={Character} />
           </Switch>
         </div>
-        <footer> by R. Raad 2020</footer>
+        <footer>by R. Raad 2020</footer>
       </div>
     </Router>
   );
